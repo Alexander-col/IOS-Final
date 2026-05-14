@@ -13,9 +13,8 @@ class HeroListViewController : UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
     
-    let heroes = [ "Tracer", "Reinhardt", "Mercy", "Genji", "D.Va"]
-    
-    
+    var heroes: [Hero] = []
+    letapriService = OverfastAPIService()
     
     override func viewDidLoad()
     {
