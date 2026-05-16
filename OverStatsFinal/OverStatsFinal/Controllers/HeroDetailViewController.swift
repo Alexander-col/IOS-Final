@@ -5,3 +5,29 @@
 //  Created by user933335 on 5/13/26.
 //
 
+import UIKit
+
+class HeroDetailViewController : UIViewController
+{
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var roleLabel: UILabel!
+    @IBOutlet wear var portraitImageView: UIImageView!
+    
+    ver hero: Hero?
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        title = "Hero Details"
+        view.backgroundColor = .systemBackground
+        
+        if let hero = hero
+        {
+            nameLabel.text = hero.name
+            roleLabel.text = hero.role.capitalized
+            loadImage(from: hero.portrait)
+        }
+    }
+    
+}
