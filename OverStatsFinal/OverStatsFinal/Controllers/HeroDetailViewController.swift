@@ -11,9 +11,9 @@ class HeroDetailViewController : UIViewController
 {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var roleLabel: UILabel!
-    @IBOutlet wear var portraitImageView: UIImageView!
+    @IBOutlet weak var portraitImageView: UIImageView!
     
-    ver hero: Hero?
+    var hero: Hero?
     
     override func viewDidLoad()
     {
@@ -29,5 +29,24 @@ class HeroDetailViewController : UIViewController
             loadImage(from: hero.portrait)
         }
     }
-    
+    func loadImage(from urlString: String)
+    {
+        guard let url = URL(string: urlString)
+        else
+        {
+            return
+        }
+        URLSession.shared.dataTask(with: url)
+        {
+            data, response, error in
+            guard let data = data else
+            {
+                return
+            }
+            DispatchQueue.main.async
+            {
+                self.portraitImageView.image = UIImage(data: data)
+            }
+        }.resume()
+    }
 }

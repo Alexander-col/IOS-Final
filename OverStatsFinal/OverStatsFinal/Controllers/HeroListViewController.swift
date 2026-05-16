@@ -38,11 +38,23 @@ class HeroListViewController : UIViewController
             }
         }
     }
-}
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "showHeroDetail"
+        {
+            let detailVC = segue.destination as? HeroDetailViewController
+            detailVC?.hero = sender as? Hero
+        }
+    }}
 
 extension HeroListViewController: UITableViewDelegate
 {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        performSegue(withIdentifier: "showHeroDetail", sender: heroes[indexPath.row])
+    }
 }
 
 //Data seperation as hero info enters
