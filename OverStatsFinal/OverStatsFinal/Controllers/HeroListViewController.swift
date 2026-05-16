@@ -14,7 +14,7 @@ class HeroListViewController : UIViewController
     @IBOutlet weak var tableView: UITableView!
     
     var heroes: [Hero] = []
-    letapriService = OverfastAPIService()
+    let apiService = OverfastAPIService()
     
     override func viewDidLoad()
     {
@@ -24,6 +24,19 @@ class HeroListViewController : UIViewController
         
         tableView.delegate = self
         tableView.dataSource = self
+        loadHeroes()
+    }
+    func loadHeroes()
+    {
+        apiService.fetchHeroes
+        {
+            heroes in
+            DispatchQueue.main.async
+            {
+                self.heroes = heroes
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -43,7 +56,12 @@ extension HeroListViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "HeroCell")
-        cell.textLabel?.text = heroes [indexPath.row]
+        
+        let hero = heroes[indexPath.row]
+        cell.textLabel?.text = hero.name
+        cell.detailTextLabel?.text = hero.role.capitalized
+        
+        
         
         return cell
     }
