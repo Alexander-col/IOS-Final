@@ -13,7 +13,8 @@ class HeroListViewController : UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
+    //vars to display heros in ergular or in cased applied filtered, as well as saving API as var
     var heroes: [Hero] = []
     var filteredHeroes: [Hero] = []
     let apiService = OverfastAPIService()
@@ -26,8 +27,14 @@ class HeroListViewController : UIViewController
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        
+        roleSegmentedControl.selectedSegmentIndex = 0
+        
         loadHeroes()
     }
+    
+    //loading heroes via API service
     func loadHeroes()
     {
         apiService.fetchHeroes
@@ -41,40 +48,41 @@ class HeroListViewController : UIViewController
             }
         }
     }
-    
+    //filter heroes now works with segments and look-up words
     func filterHeroes()
     {
         let selectedIndex = roleSegmentedControl.selectedSegmentIndex
+        let searchText = searchBar.text?.lowercased() ?? ""
+        var roleFilteredHeroes = heroes
         
-        if selectedIndex == 0
+        if selectedIndex == 1
         {
-            filteredHeroes = heroes
-        }
-        else if selectedIndex == 1
-        {
-            filteredHeroes = heroes.filter
-            {
-                $0.role.lowercased() == "tank"
-            }
+            roleFilteredHeroes = heroes.filter { $0.role.lowercased() == "tank" }
         }
         else if selectedIndex == 2
         {
-            filteredHeroes = heroes.filter
-            {
-                $0.role.lowercased() == "damage"
-            }
+            roleFilteredHeroes = heroes.filter { $0.role.lowercased() == "damage" }
         }
         else if selectedIndex == 3
         {
-            filteredHeroes = heroes.filter
+            roleFilteredHeroes = heroes.filter { $0.role.lowercased() == "support" }
+        }
+        
+        if searchText.isEmpty
+        {
+            filteredHeroes = roleFilteredHeroes
+        }
+        else
+        {
+            filteredHeroes = roleFilteredHeroes.filter
             {
-                $0.role.lowercased() == "support"
+                $0.name.lowercased().contains(searchText)
             }
         }
         
         tableView.reloadData()    }
     
-    
+    //Connecting to actually search bar in app for inputs and look-ups
     @IBAction func roleFilterChanged(_ sender: Any)
     {
         filterHeroes()
@@ -115,5 +123,14 @@ extension HeroListViewController: UITableViewDataSource
         
         
         return cell
+    }
+}
+
+
+extension HeroListViewController: UISearchBarDelegate
+{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        filterHeroes()
     }
 }
