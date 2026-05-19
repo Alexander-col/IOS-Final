@@ -88,15 +88,21 @@
                     <navigationItem key="navigationItem" id="Ogd-aq-8qJ">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="hRN-8K-HnO">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
+                            <rect key="frame" x="72" y="-2" width="300" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="All"/>
                                 <segment title="Tank"/>
+                                <segment title="Damage"/>
+                                <segment title="Support"/>
                             </segments>
+                            <connections>
+                                <action selector="roleFilterChanged:" destination="K0V-xB-bob" eventType="valueChanged" id="Su2-Ev-WXl"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="roleSegmentedControl" destination="hRN-8K-HnO" id="nvf-PJ-hjf"/>
                         <outlet property="tableView" destination="vi6-Od-MfF" id="fMH-Bd-l24"/>
                         <segue destination="9kW-FM-5Pe" kind="show" identifier="showHeroDetail" id="gHY-ae-A4F"/>
                     </connections>

@@ -15,6 +15,7 @@ class HeroListViewController : UIViewController
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
     
     var heroes: [Hero] = []
+    var filteredHeroes: [Hero] = []
     let apiService = OverfastAPIService()
     
     override func viewDidLoad()
@@ -35,12 +36,49 @@ class HeroListViewController : UIViewController
             DispatchQueue.main.async
             {
                 self.heroes = heroes
+                self.filteredHeroes = heroes
                 self.tableView.reloadData()
             }
         }
     }
     
+    func filterHeroes()
+    {
+        let selectedIndex = roleSegmentedControl.selectedSegmentIndex
+        
+        if selectedIndex == 0
+        {
+            filteredHeroes = heroes
+        }
+        else if selectedIndex == 1
+        {
+            filteredHeroes = heroes.filter
+            {
+                $0.role.lowercased() == "tank"
+            }
+        }
+        else if selectedIndex == 2
+        {
+            filteredHeroes = heroes.filter
+            {
+                $0.role.lowercased() == "damage"
+            }
+        }
+        else if selectedIndex == 3
+        {
+            filteredHeroes = heroes.filter
+            {
+                $0.role.lowercased() == "support"
+            }
+        }
+        
+        tableView.reloadData()    }
     
+    
+    @IBAction func roleFilterChanged(_ sender: Any)
+    {
+        filterHeroes()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "showHeroDetail"
@@ -54,7 +92,7 @@ extension HeroListViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        performSegue(withIdentifier: "showHeroDetail", sender: heroes[indexPath.row])
+        performSegue(withIdentifier: "showHeroDetail", sender: filteredHeroes[indexPath.row])
     }
 }
 
@@ -63,14 +101,14 @@ extension HeroListViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return heroes.count
+        return filteredHeroes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "HeroCell")
         
-        let hero = heroes[indexPath.row]
+        let hero = filteredHeroes[indexPath.row]
         cell.textLabel?.text = hero.name
         cell.detailTextLabel?.text = hero.role.capitalized
         
