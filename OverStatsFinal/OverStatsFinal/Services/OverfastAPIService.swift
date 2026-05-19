@@ -39,6 +39,8 @@ class OverfastAPIService
             {
                     let heroes = try JSONDecoder().decode([Hero].self, from: data)
                     completion(heroes)
+                    print(heroes.first as Any)
+                    completion(heroes)
             }
             catch
             {

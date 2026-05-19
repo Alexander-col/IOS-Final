@@ -12,6 +12,7 @@ import UIKit
 class HeroListViewController : UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
     
     var heroes: [Hero] = []
     let apiService = OverfastAPIService()

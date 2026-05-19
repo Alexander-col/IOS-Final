@@ -13,4 +13,9 @@ struct Hero: Codable
     let name: String
     let portrait: String
     let role: String
+    
+    let description: String?
+    let location: String?
+    let age: Int?
+    
 }
