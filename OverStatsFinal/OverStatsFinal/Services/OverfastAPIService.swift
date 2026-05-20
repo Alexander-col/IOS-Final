@@ -37,18 +37,59 @@ class OverfastAPIService
             }
             do
             {
-                    let heroes = try JSONDecoder().decode([Hero].self, from: data)
-                    completion(heroes)
-                    print(heroes.first as Any)
-                    completion(heroes)
+                let heroes = try JSONDecoder().decode([Hero].self, from: data)
+                print(heroes.first as Any)
+                completion(heroes)
             }
             catch
             {
-                    print("JSON Error: \(error)")
-                    completion([])
+                print("JSON Error: \(error)")
+                completion([])
             }
         }
-                      task.resume()
+        task.resume()
         
+    }
+    func fetchHeroDetail(heroKey: String, completion: @escaping (HeroDetail?) -> Void)
+    {
+        let urlString = "https://overfast-api.tekrop.fr/heroes/\(heroKey)"
+        
+        guard let url = URL(string: urlString)
+        else
+        {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url)
+        {
+            data, response, error in
+            
+            if let error = error
+            {
+                print("Hero detail API error: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data
+            else
+            {
+                completion(nil)
+                return
+            }
+            
+            do
+            {
+                let heroDetail = try JSONDecoder().decode(HeroDetail.self, from: data)
+                completion(heroDetail)
+            }
+            catch
+            {
+                print("Hero detail decode error: \(error)")
+                completion(nil)
+            }
+            
+        }.resume()
     }
 }

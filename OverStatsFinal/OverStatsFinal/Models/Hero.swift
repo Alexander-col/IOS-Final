@@ -16,6 +16,5 @@ struct Hero: Codable
     
     let description: String?
     let location: String?
-    let age: Int?
     
 }
