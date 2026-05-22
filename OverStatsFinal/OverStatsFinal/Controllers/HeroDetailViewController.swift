@@ -27,7 +27,11 @@ class HeroDetailViewController : UIViewController
         
         title = "Hero Details"
         view.backgroundColor = .systemBackground
-        
+        portraitImageView.layer.borderWidth = 3
+        portraitImageView.layer.borderColor = UIColor.systemBlue.cgColor
+        portraitImageView.layer.cornerRadius = 12
+        portraitImageView.clipsToBounds = true
+        portraitImageView.contentMode = .scaleAspectFit
         if let hero = hero
         {
             nameLabel.text = hero.name
