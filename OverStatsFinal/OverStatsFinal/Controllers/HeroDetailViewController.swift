@@ -15,6 +15,8 @@ class HeroDetailViewController : UIViewController
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     
     var hero: Hero?
     let apiService = OverfastAPIService()
@@ -36,6 +38,8 @@ class HeroDetailViewController : UIViewController
             
             loadImage(from: hero.portrait)
             fetchDetailedHeroData(heroKey: hero.key)
+            updateFavoriteButton()
+            
         }
     }
     func fetchDetailedHeroData(heroKey: String)
@@ -87,5 +91,41 @@ class HeroDetailViewController : UIViewController
                 self.portraitImageView.image = UIImage(data: data)
             }
         }.resume()
+    }
+    
+    func updateFavoriteButton()
+    {
+        guard let hero = hero else
+        {
+            return
+        }
+        
+        if FavoritesManager.shared.isFavorite(hero)
+        {
+            favoriteButton.setTitle("Remove from Favorites", for: .normal)
+        }
+        else
+        {
+            favoriteButton.setTitle("Add to Favorites", for: .normal)
+        }
+    }
+    
+    @IBAction func favoriteButtonTapped(_ sender: UIButton)
+    {
+        guard let hero = hero else
+        {
+            return
+        }
+        
+        if FavoritesManager.shared.isFavorite(hero)
+        {
+            FavoritesManager.shared.removeFavorite(hero)
+        }
+        else
+        {
+            FavoritesManager.shared.saveFavorite(hero)
+        }
+        
+        updateFavoriteButton()
     }
 }
