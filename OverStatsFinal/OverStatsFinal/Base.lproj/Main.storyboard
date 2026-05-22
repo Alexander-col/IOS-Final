@@ -59,6 +59,10 @@
                                     <segue destination="tHF-60-tFm" kind="show" id="z1l-XX-jJv"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OW-LOG-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="n8R-CQ-HqB">
+                                <rect key="frame" x="77" y="137" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -539,6 +543,7 @@
         <segue reference="Y3I-SP-ch2"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="OW-LOG-removebg-preview" width="270" height="186"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
