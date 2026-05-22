@@ -173,6 +173,7 @@
                     <navigationItem key="navigationItem" id="QDW-yU-AcQ"/>
                     <connections>
                         <outlet property="tableView" destination="UOR-c8-lQ1" id="UjX-2O-veH"/>
+                        <segue destination="mMy-dY-abK" kind="show" identifier="showMapDetail" id="ubw-kr-3bv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ly4-MI-35P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="map name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alF-d9-gS5">
-                                <rect key="frame" x="76" y="416" width="80" height="21"/>
+                                <rect key="frame" x="76" y="470" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
