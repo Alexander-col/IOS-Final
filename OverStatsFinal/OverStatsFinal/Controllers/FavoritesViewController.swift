@@ -33,16 +33,22 @@ class FavoritesViewController : UIViewController
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-       {
-           if segue.identifier == "showFavoriteDetail"
-           {
-               if let detailVC = segue.destination as? HeroDetailViewController,
-                  let selectedHero = sender as? Hero
-               {
-                   detailVC.hero = selectedHero
-               }
-           }
-       }
+    {
+        if segue.identifier == "showFavoriteDetail"
+        {
+            let selectedHero = sender as? Hero
+            
+            if let detailVC = segue.destination as? HeroDetailViewController
+            {
+                detailVC.hero = selectedHero
+            }
+            else if let navController = segue.destination as? UINavigationController,
+                    let detailVC = navController.topViewController as? HeroDetailViewController
+            {
+                detailVC.hero = selectedHero
+            }
+        }
+    }
 }
 
 extension FavoritesViewController : UITableViewDelegate, UITableViewDataSource
