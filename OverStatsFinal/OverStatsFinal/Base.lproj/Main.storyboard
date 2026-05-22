@@ -16,49 +16,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OverStats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC8-1X-2bX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OverStats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC8-1X-2bX">
                                 <rect key="frame" x="105" y="294" width="175" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Oaz-OH-tbB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ComicSansMS" family="Comic Sans MS" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-pf-MMs">
-                                <rect key="frame" x="127" y="576" width="131" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="OW-LOG-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="n8R-CQ-HqB">
+                                <rect key="frame" x="77" y="137" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-pf-MMs">
+                                <rect key="frame" x="36" y="608" width="313" height="66"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="AqU-gk-SaQ"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Favorites" buttonSize="large"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Favorites" buttonSize="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="YAc-nG-tmN" kind="show" id="AIa-Uo-db0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-CY-ylQ">
-                                <rect key="frame" x="119" y="414" width="155" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-CY-ylQ">
+                                <rect key="frame" x="36" y="387" width="313" height="66"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="9N6-a3-34t"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Heroes" buttonSize="large"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Heroes" buttonSize="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="K0V-xB-bob" kind="show" id="Y4M-Qe-4ay"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxO-aE-L1u">
-                                <rect key="frame" x="146" y="468" width="101" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxO-aE-L1u">
+                                <rect key="frame" x="36" y="461" width="313" height="65"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="FXJ-ay-VCY"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Maps" buttonSize="large"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Maps" buttonSize="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="h6e-QI-o3y" kind="show" id="JlO-dA-Aw5"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OW-LOG-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="n8R-CQ-HqB">
-                                <rect key="frame" x="77" y="137" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-mN-fFq">
-                                <rect key="frame" x="112" y="533" width="161" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-mN-fFq">
+                                <rect key="frame" x="36" y="534" width="313" height="66"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="Nu2-qz-COD"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Game Modes" buttonSize="large"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Game Modes" buttonSize="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="tHF-60-tFm" kind="show" id="z1l-XX-jJv"/>
                                 </connections>
@@ -66,6 +91,27 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zh0-pf-MMs" firstAttribute="top" secondItem="qfn-mN-fFq" secondAttribute="bottom" constant="8" id="5r6-HC-M9C"/>
+                            <constraint firstItem="XLi-CY-ylQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="6yB-O1-uVk"/>
+                            <constraint firstItem="qfn-mN-fFq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="8Cr-Ur-SFn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XLi-CY-ylQ" secondAttribute="trailing" constant="40" id="8Ra-uN-3Lv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zh0-pf-MMs" secondAttribute="bottom" constant="142" id="HeM-DK-qPa"/>
+                            <constraint firstItem="SC8-1X-2bX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="I9h-1Z-pp5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SC8-1X-2bX" secondAttribute="trailing" constant="113" id="Idc-r1-Yxu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zh0-pf-MMs" secondAttribute="trailing" constant="40" id="Ncj-Mm-NCx"/>
+                            <constraint firstItem="zh0-pf-MMs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="RqI-gR-KhS"/>
+                            <constraint firstItem="n8R-CQ-HqB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="ZwH-2m-uUg"/>
+                            <constraint firstItem="pxO-aE-L1u" firstAttribute="top" secondItem="XLi-CY-ylQ" secondAttribute="bottom" constant="8" id="cat-T2-k8j"/>
+                            <constraint firstItem="pxO-aE-L1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="d03-CI-aQs"/>
+                            <constraint firstItem="SC8-1X-2bX" firstAttribute="top" secondItem="n8R-CQ-HqB" secondAttribute="bottom" constant="29" id="dWe-Do-6MV"/>
+                            <constraint firstItem="XLi-CY-ylQ" firstAttribute="top" secondItem="SC8-1X-2bX" secondAttribute="bottom" constant="40" id="gYw-rV-aAh"/>
+                            <constraint firstItem="n8R-CQ-HqB" firstAttribute="centerX" secondItem="XLi-CY-ylQ" secondAttribute="centerX" id="jqh-N4-vdI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qfn-mN-fFq" secondAttribute="trailing" constant="40" id="m4y-gK-0FM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pxO-aE-L1u" secondAttribute="trailing" constant="40" id="plP-f9-0hw"/>
+                            <constraint firstItem="qfn-mN-fFq" firstAttribute="top" secondItem="pxO-aE-L1u" secondAttribute="bottom" constant="8" id="roP-0X-Lir"/>
+                            <constraint firstItem="n8R-CQ-HqB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-35" id="tAN-LS-hWN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AR8-Pd-58I"/>
                 </viewController>
@@ -544,7 +590,13 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="OW-LOG-removebg-preview" width="270" height="186"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
