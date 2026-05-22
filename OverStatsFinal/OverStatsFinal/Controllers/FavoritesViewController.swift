@@ -31,6 +31,18 @@ class FavoritesViewController : UIViewController
         favoriteHeroes = FavoritesManager.shared.getFavorites()
         tableView.reloadData()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+       {
+           if segue.identifier == "showFavoriteDetail"
+           {
+               if let detailVC = segue.destination as? HeroDetailViewController,
+                  let selectedHero = sender as? Hero
+               {
+                   detailVC.hero = selectedHero
+               }
+           }
+       }
 }
 
 extension FavoritesViewController : UITableViewDelegate, UITableViewDataSource
@@ -54,5 +66,9 @@ extension FavoritesViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showFavoriteDetail", sender: favoriteHeroes[indexPath.row])
     }
+    
+
 }
+
