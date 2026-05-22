@@ -121,4 +121,37 @@ class OverfastAPIService
                 completion([])
             }
         }.resume()
-    }}
+    }
+    
+    
+    func fetchGameModes(completion: @escaping ([GameMode]) -> Void)
+    {
+        guard let url = URL(string: "https://overfast-api.tekrop.fr/gamemodes") else
+        {
+            completion([])
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url)
+        {
+            data, response, error in
+            
+            guard let data = data else
+            {
+                completion([])
+                return
+            }
+            
+            do
+            {
+                let gameModes = try JSONDecoder().decode([GameMode].self, from: data)
+                completion(gameModes)
+            }
+            catch
+            {
+                print("Could not decode game modes: \(error)")
+                completion([])
+            }
+        }.resume()
+    }
+}
