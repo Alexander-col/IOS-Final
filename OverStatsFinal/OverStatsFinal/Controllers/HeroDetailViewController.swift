@@ -28,10 +28,10 @@ class HeroDetailViewController : UIViewController
         super.viewDidLoad()
         
         title = "Hero Details"
-        view.backgroundColor = .systemBackground
-        
+        view.backgroundColor = .systemGray6
         abilitiesTableView.delegate = self
         abilitiesTableView.dataSource = self
+        abilitiesTableView.backgroundColor = .systemGray6
         portraitImageView.layer.borderWidth = 3
         portraitImageView.layer.borderColor = UIColor.systemBlue.cgColor
         portraitImageView.layer.cornerRadius = 12
@@ -163,6 +163,8 @@ extension HeroDetailViewController : UITableViewDelegate, UITableViewDataSource
         cell.detailTextLabel?.numberOfLines = 2
         cell.imageView?.image = UIImage(systemName: "star")
         
+        cell.backgroundColor = .systemGray6
+        cell.contentView.backgroundColor = .systemGray6
         if let iconString = ability.icon,
            let iconURL = URL(string: iconString)
         {
@@ -177,12 +179,27 @@ extension HeroDetailViewController : UITableViewDelegate, UITableViewDataSource
                 
                 DispatchQueue.main.async
                 {
-                    cell.imageView?.image = UIImage(data: data)
-                    cell.setNeedsLayout()
+                    if let image = UIImage(data: data)
+                    {
+                        let smallImage = self.resizeImage(image, targetSize: CGSize(width: 24, height: 24))
+                        cell.imageView?.image = smallImage
+                        cell.setNeedsLayout()
+                    }
                 }
             }.resume()
         }
         
         return cell
+    }
+    
+    func resizeImage(_ image: UIImage, targetSize: CGSize) -> UIImage
+    {
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        
+        return renderer.image
+        {
+            context in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
     }
 }
