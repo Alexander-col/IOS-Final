@@ -92,4 +92,33 @@ class OverfastAPIService
             
         }.resume()
     }
-}
+    func fetchMaps(completion: @escaping ([GameMap]) -> Void)
+    {
+        guard let url = URL(string: "https://overfast-api.tekrop.fr/maps") else
+        {
+            completion([])
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url)
+        {
+            data, response, error in
+            
+            guard let data = data else
+            {
+                completion([])
+                return
+            }
+            
+            do
+            {
+                let maps = try JSONDecoder().decode([GameMap].self, from: data)
+                completion(maps)
+            }
+            catch
+            {
+                print("Could not decode maps: \(error)")
+                completion([])
+            }
+        }.resume()
+    }}
