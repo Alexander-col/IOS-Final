@@ -102,12 +102,14 @@ class HeroDetailViewController : UIViewController
         
         if FavoritesManager.shared.isFavorite(hero)
         {
-            favoriteButton.setTitle("Remove from Favorites", for: .normal)
+            favoriteButton.setTitle("★", for: .normal)
         }
         else
         {
-            favoriteButton.setTitle("Add to Favorites", for: .normal)
+            favoriteButton.setTitle("☆", for: .normal)
         }
+        
+        favoriteButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton)
