@@ -16,10 +16,12 @@ class HeroDetailViewController : UIViewController
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var abilitiesTableView: UITableView!
     
     
     var hero: Hero?
     let apiService = OverfastAPIService()
+    var abilities: [HeroAbility] = []
     
     override func viewDidLoad()
     {
@@ -27,6 +29,9 @@ class HeroDetailViewController : UIViewController
         
         title = "Hero Details"
         view.backgroundColor = .systemBackground
+        
+        abilitiesTableView.delegate = self
+        abilitiesTableView.dataSource = self
         portraitImageView.layer.borderWidth = 3
         portraitImageView.layer.borderColor = UIColor.systemBlue.cgColor
         portraitImageView.layer.cornerRadius = 12
@@ -62,8 +67,12 @@ class HeroDetailViewController : UIViewController
                     return
                 }
                 
+                
                 self.descriptionLabel.text = heroDetail.description ?? "No description available."
                 self.locationLabel.text = heroDetail.location ?? "Unknown location."
+                
+                self.abilities = heroDetail.abilities ?? []
+                self.abilitiesTableView.reloadData()
                 
                 if let totalHealth = heroDetail.hitpoints?.total
                 {
@@ -133,5 +142,47 @@ class HeroDetailViewController : UIViewController
         }
         
         updateFavoriteButton()
+    }
+}
+
+extension HeroDetailViewController : UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return abilities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AbilityCell", for: indexPath)
+        
+        let ability = abilities[indexPath.row]
+        
+        cell.textLabel?.text = ability.name
+        cell.detailTextLabel?.text = ability.description ?? "No description available."
+        cell.detailTextLabel?.numberOfLines = 2
+        cell.imageView?.image = UIImage(systemName: "star")
+        
+        if let iconString = ability.icon,
+           let iconURL = URL(string: iconString)
+        {
+            URLSession.shared.dataTask(with: iconURL)
+            {
+                data, response, error in
+                
+                guard let data = data else
+                {
+                    return
+                }
+                
+                DispatchQueue.main.async
+                {
+                    cell.imageView?.image = UIImage(data: data)
+                    cell.setNeedsLayout()
+                }
+            }.resume()
+        }
+        
+        return cell
     }
 }

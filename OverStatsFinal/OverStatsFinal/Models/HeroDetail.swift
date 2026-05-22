@@ -15,6 +15,8 @@ struct HeroDetail: Codable
     let role: String
     let location: String?
     let hitpoints: Hitpoints?
+    let abilities: [HeroAbility]?
+    
 }
 
 struct Hitpoints: Codable
@@ -23,4 +25,11 @@ struct Hitpoints: Codable
     let health: Int
     let shields: Int
     let total: Int
+}
+
+struct HeroAbility: Codable
+{
+    let name: String
+    let description: String?
+    let icon: String?
 }
