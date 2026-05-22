@@ -16,30 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="OverStats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC8-1X-2bX">
-                                <rect key="frame" x="159" y="242" width="75" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OverStats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC8-1X-2bX">
+                                <rect key="frame" x="105" y="289" width="175" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ComicSansMS" family="Comic Sans MS" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-pf-MMs">
-                                <rect key="frame" x="143" y="395" width="106" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-pf-MMs">
+                                <rect key="frame" x="143" y="553" width="106" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Favorites"/>
                                 <connections>
                                     <segue destination="YAc-nG-tmN" kind="show" id="AIa-Uo-db0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-CY-ylQ">
-                                <rect key="frame" x="127" y="326" width="139" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-CY-ylQ">
+                                <rect key="frame" x="119" y="414" width="155" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Browse Heroes"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Heroes"/>
                                 <connections>
                                     <segue destination="K0V-xB-bob" kind="show" id="Y4M-Qe-4ay"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxO-aE-L1u">
-                                <rect key="frame" x="164" y="476" width="66" height="35"/>
+                                <rect key="frame" x="159" y="619" width="66" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Maps"/>
@@ -48,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-mN-fFq">
-                                <rect key="frame" x="130" y="369" width="125" height="35"/>
+                                <rect key="frame" x="135" y="498" width="125" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Game Modes"/>
@@ -59,24 +62,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="SC8-1X-2bX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="139" id="20j-fB-nXc"/>
-                            <constraint firstItem="SC8-1X-2bX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5sg-xY-7sd"/>
-                            <constraint firstItem="SC8-1X-2bX" firstAttribute="centerX" secondItem="XLi-CY-ylQ" secondAttribute="centerX" id="HUT-Hn-owB"/>
-                            <constraint firstItem="XLi-CY-ylQ" firstAttribute="centerX" secondItem="zh0-pf-MMs" secondAttribute="centerX" id="JAA-t2-Ady"/>
-                            <constraint firstItem="SC8-1X-2bX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O7f-nX-K0Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zh0-pf-MMs" secondAttribute="bottom" constant="396" id="PlZ-Dh-eq3"/>
-                            <constraint firstItem="XLi-CY-ylQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="R2r-Cs-DEp"/>
-                            <constraint firstItem="SC8-1X-2bX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="WEj-a6-180"/>
-                            <constraint firstItem="XLi-CY-ylQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="amP-NM-cYo"/>
-                            <constraint firstItem="SC8-1X-2bX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="cvK-Lj-yVL"/>
-                            <constraint firstItem="zh0-pf-MMs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="151" id="dQS-mV-EuR"/>
-                            <constraint firstItem="XLi-CY-ylQ" firstAttribute="top" secondItem="SC8-1X-2bX" secondAttribute="bottom" constant="40" id="gbn-hW-mi5"/>
-                            <constraint firstItem="zh0-pf-MMs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lzy-vt-Jnd"/>
-                            <constraint firstItem="zh0-pf-MMs" firstAttribute="top" secondItem="XLi-CY-ylQ" secondAttribute="bottom" constant="28" id="unT-3N-dFd"/>
-                            <constraint firstItem="zh0-pf-MMs" firstAttribute="top" secondItem="XLi-CY-ylQ" secondAttribute="bottom" constant="20" id="vd2-KZ-ipf"/>
-                            <constraint firstItem="SC8-1X-2bX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="139" id="wrK-57-xly"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AR8-Pd-58I"/>
                 </viewController>
@@ -470,7 +455,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hero name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZA-Zn-DE0">
-                                <rect key="frame" x="46" y="416" width="165" height="21"/>
+                                <rect key="frame" x="46" y="415.66666666666669" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
