@@ -273,9 +273,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="9kW-FM-5Pe" kind="show" identifier="showFavoriteDetail" id="5Tc-DU-7Fh"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -286,6 +283,7 @@
                     <navigationItem key="navigationItem" id="0XK-Gv-cmL"/>
                     <connections>
                         <outlet property="tableView" destination="6PL-mo-wq6" id="7WF-ri-WdQ"/>
+                        <segue destination="9kW-FM-5Pe" kind="show" identifier="showFavoriteDetail" id="Y3I-SP-ch2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOF-8s-bEc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -432,7 +430,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5Tc-DU-7Fh"/>
+        <segue reference="Y3I-SP-ch2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
