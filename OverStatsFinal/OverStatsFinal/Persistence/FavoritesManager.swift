@@ -1,12 +1,9 @@
-//
-//  FavoritesManager.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/13/26.
-//
+// Author Alexander Colotl
+// Created May 2026
 
 import Foundation
 
+//This helps manages all data related to favorites such as added to array then using JSON to recieve and make sense of data
 class FavoritesManager
 {
     static let shared = FavoritesManager()

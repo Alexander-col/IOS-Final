@@ -1,12 +1,10 @@
-//
-//  Hero.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/13/26.
-//
+// Author Alexander Colotl
+// Created May 2026
 
 import Foundation
 
+
+//This struct holds all the items to be used by the Hero 
 struct Hero: Codable
 {
     let key: String

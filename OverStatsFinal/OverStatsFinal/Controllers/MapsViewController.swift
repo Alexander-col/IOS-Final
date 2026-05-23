@@ -1,12 +1,9 @@
-//
-//  MapsViewController.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/22/26.
-//
+// Author Alexander Colotl
+// Created May 2026
 
 import UIKit
 
+//This screen is for a table biew of all the maps ever released in Overwatch as a table view via API
 class MapsViewController : UIViewController
 {
     @IBOutlet weak var tableView: UITableView!

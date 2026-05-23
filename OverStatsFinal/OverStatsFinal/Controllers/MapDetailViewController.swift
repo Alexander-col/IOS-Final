@@ -1,12 +1,9 @@
-//
-//  MapDetailViewController.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/22/26.
-//
+// Author Alexander Colotl
+// Created May 2026
 
 import UIKit
 
+//This screen hold the detailed view of a game mode selected via the prior game modes table view
 class MapDetailViewController : UIViewController
 {
     @IBOutlet weak var mapImageView: UIImageView!

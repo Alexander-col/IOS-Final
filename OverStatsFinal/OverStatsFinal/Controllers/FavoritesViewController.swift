@@ -1,14 +1,16 @@
-import UIKit
+//   Author: Alexander Colotl
+//  Created May 2026
 
+import UIKit
 //Screen will show all of the favorite heros as the ordered stareed, if not defualt message
 class FavoritesViewController : UIViewController
 {
-    //connections, table view for selcted favorite heroes if not, then defualt message
+    // connections, table view for selcted favorite heroes if not, then defualt message
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyFavoritesLabel: UILabel!
     var favoriteHeroes: [Hero] = []
     
-    //function for screen setup color display connection of table view
+    // function for screen setup color display connection of table view
     override func viewDidLoad()
     {
         super.viewDidLoad()

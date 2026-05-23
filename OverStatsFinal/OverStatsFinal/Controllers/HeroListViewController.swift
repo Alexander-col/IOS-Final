@@ -1,10 +1,5 @@
-//
-//  HeroListViewController.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/13/26.
-//
-//UIKit as term specs
+// Author Alexander Colotl
+// Created May 2026
 import UIKit
 
 

@@ -1,9 +1,6 @@
-//
-//  HeroDetail.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/13/26.
-//
+// Author Alexander Colotl
+// Created May 2026
+
 //Adtional file need due to API's {key} on hero details
 import Foundation
 
@@ -18,7 +15,7 @@ struct HeroDetail: Codable
     let abilities: [HeroAbility]?
     
 }
-
+//Some heros have more hp on top of base such armor shields on top of health
 struct Hitpoints: Codable
 {
     let armor: Int
@@ -26,7 +23,7 @@ struct Hitpoints: Codable
     let shields: Int
     let total: Int
 }
-
+//Heroes hold addtional abltities that vary so simpler to store on a table view
 struct HeroAbility: Codable
 {
     let name: String

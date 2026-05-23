@@ -1,3 +1,5 @@
+//  Author: Alexander Colotl
+// Created May 2026
 
 import UIKit
 //Overall this screen goes over game mode chosen from the game modes display table view piror

@@ -1,12 +1,8 @@
-//
-//  GameModesViewController.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/22/26.
-//
-
+// Author Alexander Colotl
+// Created May 2026
 import UIKit
 
+//This screen shoes list Overwatch games modes via API
 class GameModesViewController : UIViewController
 {
     @IBOutlet weak var tableView: UITableView!

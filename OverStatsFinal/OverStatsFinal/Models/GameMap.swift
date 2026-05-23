@@ -1,12 +1,11 @@
-//
-//  GameMap.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/22/26.
-//
+// Author Alexander Colotl
+// Created May 2026
+
+
 
 import Foundation
 
+//This hold the struct for the detialed screen of a selected Game map to be used for detailed screen
 struct GameMap: Codable
 {
     let name: String

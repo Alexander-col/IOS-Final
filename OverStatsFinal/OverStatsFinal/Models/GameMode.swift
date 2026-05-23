@@ -1,12 +1,9 @@
-//
-//  GameMode.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/22/26.
-//
+// Author Alexander Colotl
+// Created May 2026
 
 import Foundation
 
+//This sturct holds the items of what Game mode values will be filled in by the API on game mode detail screen
 struct GameMode: Codable
 {
     let key: String?

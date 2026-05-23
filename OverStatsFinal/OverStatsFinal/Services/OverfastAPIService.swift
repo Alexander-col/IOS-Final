@@ -1,15 +1,15 @@
-//
-//  OverfastAPIService.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/13/26.
-//
+// Author Alexander Colotl
+// Created May 2026
 
 //import foundation to use API for Overstats
 import Foundation
 
+
+//This class takes care of everything related to data insights on app using API and JSON decoding
 class OverfastAPIService
 {
+    
+    //func fetches list of heroes of list view table vieww
     func fetchHeroes(completion: @escaping ([Hero]) -> Void)
     {
         let urlString = "https://overfast-api.tekrop.fr/heroes"
@@ -50,6 +50,8 @@ class OverfastAPIService
         task.resume()
         
     }
+    
+    //func uses key due to APIs structure after choosing the selected hero
     func fetchHeroDetail(heroKey: String, completion: @escaping (HeroDetail?) -> Void)
     {
         let urlString = "https://overfast-api.tekrop.fr/heroes/\(heroKey)"
@@ -92,6 +94,8 @@ class OverfastAPIService
             
         }.resume()
     }
+    
+    //func fetches map data from the API
     func fetchMaps(completion: @escaping ([GameMap]) -> Void)
     {
         guard let url = URL(string: "https://overfast-api.tekrop.fr/maps") else
@@ -123,7 +127,7 @@ class OverfastAPIService
         }.resume()
     }
     
-    
+    //func fetches game modes from API
     func fetchGameModes(completion: @escaping ([GameMode]) -> Void)
     {
         guard let url = URL(string: "https://overfast-api.tekrop.fr/gamemodes") else
