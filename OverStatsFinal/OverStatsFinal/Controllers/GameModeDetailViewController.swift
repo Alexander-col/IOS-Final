@@ -22,7 +22,7 @@ class GameModeDetailViewController : UIViewController
         super.viewDidLoad()
         
         title = "Game Mode Details"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray6
         screenshotImageView.layer.borderWidth = 3
         screenshotImageView.layer.borderColor = UIColor.systemBlue.cgColor
         screenshotImageView.layer.cornerRadius = 12

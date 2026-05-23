@@ -13,7 +13,7 @@ class HomeViewController: UIViewController
     {
         super.viewDidLoad()
         title = "OverStats"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray6
     }
     
 }

@@ -19,8 +19,7 @@ class MapsViewController : UIViewController
         super.viewDidLoad()
         
         title = "Maps"
-        view.backgroundColor = .systemBackground
-        
+        view.backgroundColor = .systemGray6
         tableView.delegate = self
         tableView.dataSource = self
         

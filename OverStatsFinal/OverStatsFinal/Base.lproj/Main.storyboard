@@ -413,12 +413,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vif-sq-KAa">
+                                <rect key="frame" x="50" y="183" width="308" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">No favorites selected.Make sure to hit the star icon!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mdf-0Y-7Yf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0XK-Gv-cmL"/>
                     <connections>
+                        <outlet property="emptyFavoritesLabel" destination="Vif-sq-KAa" id="n2s-ah-glc"/>
                         <outlet property="tableView" destination="6PL-mo-wq6" id="7WF-ri-WdQ"/>
                         <segue destination="9kW-FM-5Pe" kind="show" identifier="showFavoriteDetail" id="Y3I-SP-ch2"/>
                     </connections>
@@ -587,7 +596,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gHY-ae-A4F"/>
+        <segue reference="Y3I-SP-ch2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="OW-LOG-removebg-preview" width="270" height="186"/>

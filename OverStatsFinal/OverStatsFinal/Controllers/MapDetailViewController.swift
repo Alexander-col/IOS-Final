@@ -21,7 +21,7 @@ class MapDetailViewController : UIViewController
         super.viewDidLoad()
         
         title = "Map Details"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray6
         mapImageView.layer.borderWidth = 3
         mapImageView.layer.borderColor = UIColor.systemBlue.cgColor
         mapImageView.layer.cornerRadius = 12

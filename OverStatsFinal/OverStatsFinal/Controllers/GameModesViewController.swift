@@ -19,8 +19,7 @@ class GameModesViewController : UIViewController
         super.viewDidLoad()
         
         title = "Game Modes"
-        view.backgroundColor = .systemBackground
-        
+        view.backgroundColor = .systemGray6
         tableView.delegate = self
         tableView.dataSource = self
         

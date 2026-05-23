@@ -10,7 +10,7 @@ import UIKit
 class FavoritesViewController : UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var emptyFavoritesLabel: UILabel!
     var favoriteHeroes: [Hero] = []
     
     override func viewDidLoad()
@@ -18,7 +18,7 @@ class FavoritesViewController : UIViewController
         super.viewDidLoad()
         
         title = "Favorites"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray6
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,6 +30,8 @@ class FavoritesViewController : UIViewController
         
         favoriteHeroes = FavoritesManager.shared.getFavorites()
         tableView.reloadData()
+        
+        updateEmptyState()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -49,7 +51,20 @@ class FavoritesViewController : UIViewController
             }
         }
     }
-}
+    
+    func updateEmptyState()
+    {
+        if favoriteHeroes.isEmpty
+        {
+            emptyFavoritesLabel.isHidden = false
+            tableView.isHidden = true
+        }
+        else
+        {
+            emptyFavoritesLabel.isHidden = true
+            tableView.isHidden = false
+        }
+    }}
 
 extension FavoritesViewController : UITableViewDelegate, UITableViewDataSource
 {
