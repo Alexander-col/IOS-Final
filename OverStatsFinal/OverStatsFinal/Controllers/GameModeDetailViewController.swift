@@ -23,7 +23,11 @@ class GameModeDetailViewController : UIViewController
         
         title = "Game Mode Details"
         view.backgroundColor = .systemBackground
-        
+        screenshotImageView.layer.borderWidth = 3
+        screenshotImageView.layer.borderColor = UIColor.systemBlue.cgColor
+        screenshotImageView.layer.cornerRadius = 12
+        screenshotImageView.clipsToBounds = true
+        screenshotImageView.contentMode = .scaleAspectFit
         if let gameMode = gameMode
         {
             nameLabel.text = gameMode.name

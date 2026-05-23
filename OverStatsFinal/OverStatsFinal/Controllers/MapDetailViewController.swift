@@ -22,7 +22,11 @@ class MapDetailViewController : UIViewController
         
         title = "Map Details"
         view.backgroundColor = .systemBackground
-        
+        mapImageView.layer.borderWidth = 3
+        mapImageView.layer.borderColor = UIColor.systemBlue.cgColor
+        mapImageView.layer.cornerRadius = 12
+        mapImageView.clipsToBounds = true
+        mapImageView.contentMode = .scaleAspectFit
         if let gameMap = gameMap
         {
             nameLabel.text = gameMap.name
