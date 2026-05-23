@@ -2,7 +2,7 @@
 // Created May 2026
 
 import UIKit
-
+//Class handles all vars and items need for the hero detial screen
 class HeroDetailViewController : UIViewController
 {
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,7 +18,7 @@ class HeroDetailViewController : UIViewController
     var hero: Hero?
     let apiService = OverfastAPIService()
     var abilities: [HeroAbility] = []
-    
+    //func loads decor for border, background and scaling
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -47,6 +47,8 @@ class HeroDetailViewController : UIViewController
             
         }
     }
+    
+    //func uses API servics function to retrive data and fill in label vars
     func fetchDetailedHeroData(heroKey: String)
     {
         apiService.fetchHeroDetail(heroKey: heroKey)
@@ -81,6 +83,8 @@ class HeroDetailViewController : UIViewController
             }
         }
     }
+    
+    //loads in image to display hero on UI Image view
     func loadImage(from urlString: String)
     {
         guard let url = URL(string: urlString)
@@ -101,7 +105,7 @@ class HeroDetailViewController : UIViewController
             }
         }.resume()
     }
-    
+    //when favorite button clicked hero added in favorite array/tab
     func updateFavoriteButton()
     {
         guard let hero = hero else
@@ -140,7 +144,7 @@ class HeroDetailViewController : UIViewController
         updateFavoriteButton()
     }
 }
-
+//Addtional extension to hold hero unique abltiies
 extension HeroDetailViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
