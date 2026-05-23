@@ -1,22 +1,17 @@
-//
-//  GameModeDetailViewController.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/22/26.
-//
-
-
 
 import UIKit
-
+//Overall this screen goes over game mode chosen from the game modes display table view piror
 class GameModeDetailViewController : UIViewController
 {
+    //IBOutlets created to connect conteents of page such as mode image, game mode name and describing it
     @IBOutlet weak var screenshotImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    //Stores game mode chosen from prior display table view
     var gameMode: GameMode?
     
+    //func sets up decor of screen with border added to image, defulat messages and background color
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -39,7 +34,7 @@ class GameModeDetailViewController : UIViewController
             }
         }
     }
-    
+    //Loads imagefrom API url string 
     func loadImage(from urlString: String)
     {
         guard let url = URL(string: urlString)

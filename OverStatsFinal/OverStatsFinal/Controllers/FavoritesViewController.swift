@@ -1,18 +1,14 @@
-//
-//  FavoritesViewController.swift
-//  OverStatsFinal
-//
-//  Created by user933335 on 5/21/26.
-//
-
 import UIKit
 
+//Screen will show all of the favorite heros as the ordered stareed, if not defualt message
 class FavoritesViewController : UIViewController
 {
+    //connections, table view for selcted favorite heroes if not, then defualt message
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyFavoritesLabel: UILabel!
     var favoriteHeroes: [Hero] = []
     
+    //function for screen setup color display connection of table view
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -23,7 +19,7 @@ class FavoritesViewController : UIViewController
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+    //func checks upon favorites array to update heroes from hero cell display to favorites
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -33,7 +29,7 @@ class FavoritesViewController : UIViewController
         
         updateEmptyState()
     }
-
+    //func checks for segue going hero detial screen up selection of hero
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "showFavoriteDetail"
@@ -51,7 +47,7 @@ class FavoritesViewController : UIViewController
             }
         }
     }
-    
+    //When favorite is picked and array empty default emepty label goes away to show table view of favorites
     func updateEmptyState()
     {
         if favoriteHeroes.isEmpty
@@ -65,7 +61,7 @@ class FavoritesViewController : UIViewController
             tableView.isHidden = false
         }
     }}
-
+//Extension takes care of table set up once heros are in favorite array simllar hero view display
 extension FavoritesViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
